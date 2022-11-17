@@ -1,5 +1,6 @@
 import React from "react";
 import "./LandingPage.css";
+import CourseSelection from "./CourseSelection";
 
 export default function LandingPage() {
   return (
@@ -16,37 +17,7 @@ export default function LandingPage() {
       </div>
       <div className="course-container mt-5">
         <h3 className="text-center">Which course are you interested in?</h3>
-        <form>
-          <div className="row">
-            <div className="col">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="course" id="vui-design" value="option1" checked />
-                <label class="form-check-label" for="vui-design">
-                  Voice User Interface Design
-                </label>
-              </div>
-            </div>
-            <div className="col">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="course" id="full-stack" value="option2" />
-                <label class="form-check-label" for="full-stack">
-                  Full-Stack Immersion
-                </label>
-              </div>
-            </div>
-            <div className="col">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="course" id="all" value="option3" />
-                <label class="form-check-label" for="all">
-                  Both
-                </label>
-              </div>
-            </div>
-          </div>
-          <div>
-            <input className="w-100" type="submit" value="Select" />
-          </div>
-        </form>
+        <CourseSelection />
       </div>
       <div className="results-container">
         Results
