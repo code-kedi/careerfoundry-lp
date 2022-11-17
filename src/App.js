@@ -1,13 +1,16 @@
 import './App.css';
+import LandingPage from './LandingPage';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="container">
-        <p>Hello from App</p>
-      </header>
+      <div className="container">
+        <header>
+          <p>LP</p>
+        </header>
+        <LandingPage />
+        <footer className="App-footer"><small>Coded by Sonja</small></footer>
+      </div>
     </div>
   );
 }
-
-export default App;
