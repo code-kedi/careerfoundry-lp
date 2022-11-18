@@ -8,30 +8,16 @@ import axios from "axios";
 export default function App() {
   const [data, setData] = useState("Loading...");
   const [loaded, setLoaded] = useState(false);
+  const apiUrl = "https://private-e05942-courses22.apiary-mock.com/courses";
 
   useEffect(() => {
-    setLoaded(false);
+    axios.get(apiUrl).then(handleResponse);
   }, []);
 
   function handleResponse(response) {
     setData(response.data);
     setLoaded(true);
   }
-
-  function getData() {
-    const apiUrl = "https://private-e05942-courses22.apiary-mock.com/courses";
-    axios.get(apiUrl).then(handleResponse);
-  }
-
-  // API call before page reload
-  window.addEventListener("beforeunload", (event) => {
-    getData();
-  });
-
-  // API call after page reload
-  window.addEventListener("unload", (event) => {
-    getData();
-  });
 
   if(loaded) {
     return (
@@ -48,7 +34,6 @@ export default function App() {
       </div>
     );
   } else {
-    getData();
     return null;
   }
 }

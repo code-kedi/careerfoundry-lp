@@ -7,18 +7,14 @@ export default function CourseSelection() {
   const [results, setResults] = useState("");
 
   function handleChange(event) {
-    // console.log(event.target.value)
     setChoice(event.target.value);
   }
 
   function handleResponse(response) {
-    console.log(response.data);
     setResults(response.data);
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-
+  function getData() {
     let courseSlug = "";
 
     if (choice === "vui-design") {
@@ -29,6 +25,11 @@ export default function CourseSelection() {
 
     const apiUrl = `https://private-e05942-courses22.apiary-mock.com/courses/${courseSlug}`;
     axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    getData();
   }
 
   return (
@@ -57,7 +58,7 @@ export default function CourseSelection() {
           <input className="w-100" type="submit" value="Select" />
         </div>
       </form>
-    <CourseDetails results={results} />
+    {results ? <CourseDetails results={results}/> : null}
   </div>
   );
 }

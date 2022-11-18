@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Course(props) {
-  console.log(props.data);
   return (
     <div className="Course">
       <h3>Next start dates</h3>
