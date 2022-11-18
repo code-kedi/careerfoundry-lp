@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import CourseDetails from "./CourseDetails";
 import axios from "axios";
 
 export default function CourseSelection() {
-  const [choice, setChoice] = useState(null);
+  const [choice, setChoice] = useState("");
+  const [results, setResults] = useState("");
 
   function handleChange(event) {
     // console.log(event.target.value)
@@ -11,6 +13,7 @@ export default function CourseSelection() {
 
   function handleResponse(response) {
     console.log(response.data);
+    setResults(response.data);
   }
 
   function handleSubmit(event) {
@@ -29,28 +32,32 @@ export default function CourseSelection() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="row">
-        <div className="col">
-          <div className="form-check">
-            <input className="form-check-input" type="radio" name="course" id="vui-design" value="vui-design" onChange={handleChange} />
-            <label className="form-check-label" htmlFor="vui-design">
-              Voice User Interface Design
-            </label>
+    <div className="CourseSelection">
+      <h3 className="text-center">Which course are you interested in?</h3>
+      <form onSubmit={handleSubmit}>
+        <div className="row">
+          <div className="col">
+            <div className="form-check">
+              <input className="form-check-input" type="radio" name="course" id="vui-design" value="vui-design" onChange={handleChange} />
+              <label className="form-check-label" htmlFor="vui-design">
+                Voice User Interface Design
+              </label>
+            </div>
+          </div>
+          <div className="col">
+            <div className="form-check">
+              <input className="form-check-input" type="radio" name="course" id="full-stack" value="full-stack" onChange={handleChange} />
+              <label className="form-check-label" htmlFor="full-stack">
+                Full-Stack Immersion
+              </label>
+            </div>
           </div>
         </div>
-        <div className="col">
-          <div className="form-check">
-            <input className="form-check-input" type="radio" name="course" id="full-stack" value="full-stack" onChange={handleChange} />
-            <label className="form-check-label" htmlFor="full-stack">
-              Full-Stack Immersion
-            </label>
-          </div>
+        <div>
+          <input className="w-100" type="submit" value="Select" />
         </div>
-      </div>
-    <div>
-      <input className="w-100" type="submit" value="Select" />
-    </div>
-  </form>
+      </form>
+    <CourseDetails results={results} />
+  </div>
   );
 }
