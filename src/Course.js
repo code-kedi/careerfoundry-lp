@@ -7,7 +7,7 @@ export default function Course(props) {
       <h3>Next start dates</h3>
       {props.data.map((course, index) => {
         return (
-          <div key={index} className="row">
+          <div key={index}>
             <h2>{course.title}</h2>
             <p>{course.next_start_formatted}</p>
             <a
