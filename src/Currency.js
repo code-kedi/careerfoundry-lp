@@ -1,3 +1,5 @@
+// I couldn't make it work but this is what I tried to do
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -11,15 +13,15 @@ export default function Currency() {
     axios.get(ipInfoApiUrl).then(handleResponse);
   });
 
-  function determineCurrency() {
-    if (location && location.includes("Europe")) {
+  const determineCurrency = () => {
+    if (location.includes("Europe")) {
       setCurrency("eur");
     } else {
       setCurrency("usd");
     }
   }
 
-  function handleResponse(response) {
+  const handleResponse = (response) => {
     setLocation(response.data.timezone);
     if (location) {
       determineCurrency();

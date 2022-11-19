@@ -1,5 +1,6 @@
 import React from "react";
 import "./css/CourseDetails.css";
+// import Currency from "./Currency";
 
 export default function CourseDetails(props) {
   if(props) {
