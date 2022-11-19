@@ -1,4 +1,4 @@
-# CareerFoundry Landing Paget
+# CareerFoundry Landing Page
 
 ## Getting started
 
