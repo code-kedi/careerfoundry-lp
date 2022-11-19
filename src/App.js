@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './css/App.css';
 import Course from './Course';
-import LandingPage from './LandingPage';
+import Intro from './Intro';
 import CourseSelection from './CourseSelection';
+import Nav from './Nav';
+import Footer from './Footer';
 import axios from "axios";
 
 export default function App() {
@@ -11,10 +13,12 @@ export default function App() {
   const apiUrl = "https://private-e05942-courses22.apiary-mock.com/courses";
 
   useEffect(() => {
+    // API call on page load to display the offers to the user
     axios.get(apiUrl).then(handleResponse);
   }, []);
 
-  function handleResponse(response) {
+  const handleResponse = (response) => {
+    // save API response inside the data state
     setData(response.data);
     setLoaded(true);
   }
@@ -22,15 +26,11 @@ export default function App() {
   if(loaded) {
     return (
       <div className="App">
-        <div className="container">
-          <header>
-            <p>LP</p>
-          </header>
-          <LandingPage />
-          <Course data={data} />
-          <CourseSelection />
-          <footer className="App-footer"><small>Coded by Sonja</small></footer>
-        </div>
+        <Nav navbar-nav={true} />
+        <Intro />
+        <Course data={data} />
+        <CourseSelection />
+        <Footer />
       </div>
     );
   } else {

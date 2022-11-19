@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 import CourseDetails from "./CourseDetails";
 import axios from "axios";
+import "./css/CourseSelection.css"
 
 export default function CourseSelection() {
   const [choice, setChoice] = useState("");
   const [results, setResults] = useState("");
 
-  function handleChange(event) {
+  const handleChange = (event) => {
+    // whenever the user selects one option, save it inside the choice state
     setChoice(event.target.value);
   }
 
-  function handleResponse(response) {
+  const handleResponse = (response) => {
+    // save response from the API inside the results state
     setResults(response.data);
   }
 
-  function getData() {
+  // make API call based on the user's choice
+  const getData = () => {
     let courseSlug = "";
 
     if (choice === "vui-design") {
@@ -27,37 +31,35 @@ export default function CourseSelection() {
     axios.get(apiUrl).then(handleResponse);
   }
 
-  function handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
     getData();
   }
 
   return (
     <div className="CourseSelection">
-      <h3 className="text-center">Which course are you interested in?</h3>
-      <form onSubmit={handleSubmit}>
-        <div className="row">
-          <div className="col">
-            <div className="form-check">
-              <input className="form-check-input" type="radio" name="course" id="vui-design" value="vui-design" onChange={handleChange} />
-              <label className="form-check-label" htmlFor="vui-design">
-                Voice User Interface Design
-              </label>
+      <div className="selection-wrapper">
+        <h3 className="text-center">Which course are you interested in?</h3>
+          <form onSubmit={handleSubmit}>
+            <div className="radio-wrapper">
+              <div className="form-check-inline mt-2 mb-3">
+                <input className="form-check-input" type="radio" name="course" id="vui-design" value="vui-design" onChange={handleChange} />
+                <label className="form-check-label" htmlFor="vui-design">
+                  Voice User Interface Design
+                </label>
+              </div>
+              <div className="form-check-inline">
+                <input className="form-check-input" type="radio" name="course" id="full-stack" value="full-stack" onChange={handleChange} />
+                <label className="form-check-label" htmlFor="full-stack">
+                  Full-Stack Immersion
+                </label>
+              </div>
             </div>
+          <div>
+            <input type="submit" value="Select" id="submit-btn" />
           </div>
-          <div className="col">
-            <div className="form-check">
-              <input className="form-check-input" type="radio" name="course" id="full-stack" value="full-stack" onChange={handleChange} />
-              <label className="form-check-label" htmlFor="full-stack">
-                Full-Stack Immersion
-              </label>
-            </div>
-          </div>
-        </div>
-        <div>
-          <input className="w-100" type="submit" value="Select" />
-        </div>
-      </form>
+        </form>
+      </div>
     {results ? <CourseDetails results={results}/> : null}
   </div>
   );
