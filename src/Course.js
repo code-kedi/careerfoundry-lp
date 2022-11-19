@@ -1,14 +1,16 @@
 import React from "react";
+import "./css/Course.css"
 
 export default function Course(props) {
   return (
     <div className="Course">
-      <h3>Next start dates</h3>
+      <h3 className="mb-3">Next start dates:</h3>
+      <div className="course-wrapper d-flex justify-content-around">
       {props.data.map((course, index) => {
         return (
-          <div key={index}>
-            <h2>{course.title}</h2>
-            <p>{course.next_start_formatted}</p>
+          <div key={index} className="rounded">
+            <h2 className="mb-3">{course.title}</h2>
+            <p className="mb-4">{course.next_start_formatted}</p>
             <a
               href={course.url}
               target="_blank"
@@ -18,6 +20,7 @@ export default function Course(props) {
           </div>
         );
       })}
+      </div>
     </div>
   );
 

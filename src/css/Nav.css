@@ -1,0 +1,22 @@
+.Nav {
+  padding: 10px;
+  background-color: #223B50;
+}
+
+.Nav a {
+  color: #FFF;
+  margin: 0;
+  transition: 0.2s ease;
+}
+
+.Nav a:hover:not(#logo-link) {
+  background-color: #415a6e;
+  color: #FFF;
+}
+
+
+.Nav #logo {
+  width: 70%;
+  height: 30px;
+  margin-left: 20px;
+}
