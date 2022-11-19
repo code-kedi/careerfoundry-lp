@@ -1,0 +1,32 @@
+.CourseDetails {
+  background-color: #F3F3F3;
+}
+
+.CourseDetails .details-wrapper {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.CourseDetails .details-wrapper h4 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.CourseDetails .details-wrapper h5 {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.CourseDetails .details-wrapper .date-wrapper p {
+  color: #9F9F9F;
+  font-style: italic;
+  margin: 0;
+}
+
+.CourseDetails .details-wrapper .date-wrapper ul {
+  list-style: none;
+  display: inline-block;
+  color: #9F9F9F;
+  font-style: italic;
+  padding: 0 16px;
+}

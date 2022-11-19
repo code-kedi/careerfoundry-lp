@@ -1,0 +1,43 @@
+.Intro {
+  background-color: #223B50;
+  padding: 40px;
+}
+
+.Intro .info-container img {
+  max-width: 50%;
+  height: auto;
+  object-fit: none;
+}
+
+.Intro .info-container .info-container-details {
+  padding-left: 20px;
+  padding-right: 60px;
+}
+
+.Intro .info-container .info-container-details h2, p {
+  color: #FFF;
+}
+
+.Intro .info-container .info-container-details h2 {
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.Intro .info-container .info-container-details p {
+  font-size: 24px;
+  font-weight: 200;
+  line-height: 1.2;
+}
+
+.Intro .info-container .info-container-details p span {
+  font-weight: 500;
+}
+
+.Intro .info-container .info-container-details label {
+  background-color: #96DDE7;
+  border: 1px #96DDE7 solid;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 50px;
+  color: #223B50;
+}

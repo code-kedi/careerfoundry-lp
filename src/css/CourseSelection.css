@@ -1,0 +1,38 @@
+.CourseSelection .selection-wrapper {
+  background-color: #20667C;
+  padding: 40px 0 20px;
+}
+
+.CourseSelection .selection-wrapper h3 {
+  color: #FFF;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.CourseSelection .selection-wrapper form .radio-wrapper {
+  color: #FFF;
+  text-align: center;
+}
+
+.CourseSelection .selection-wrapper form .radio-wrapper .form-check-inline label {
+  padding: 0 6px;
+  line-height: 1.1;
+}
+
+.CourseSelection .selection-wrapper form div #submit-btn {
+  display: block;
+  margin: 15px auto;
+  background-color: #20667C;
+  border: 1px #FFF solid;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 4px 12px;
+  border-radius: 50px;
+  color: #FFF;
+  transition: 0.2s ease;
+}
+
+.CourseSelection .selection-wrapper form div #submit-btn:hover {
+  background-color: #36869E;
+}

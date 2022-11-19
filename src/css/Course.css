@@ -1,0 +1,43 @@
+.Course {
+  background-color: #F3F3F3;
+  padding: 60px 0;
+}
+
+.Course h3 {
+  font-size: 20px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.Course p {
+  color: #212529;
+  line-height: 1.1;
+}
+
+.Course .course-wrapper div {
+  background-color: #FFF;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 20px 30px;
+  width: 34%;
+}
+
+.Course .course-wrapper div h2 {
+  font-size: 30px;
+  line-height: 1.3;
+}
+
+
+.Course .course-wrapper div a {
+  color: #223B50;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 1.2;
+  padding: 4px 12px;
+  border-radius: 50px;
+  border: 1px #223B50 solid;
+  transition: 0.2s ease;
+}
+
+.Course .course-wrapper div a:hover {
+  background-color: #E5E5E5;
+}
