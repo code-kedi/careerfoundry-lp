@@ -2,7 +2,6 @@ import React from "react";
 import "./css/CourseDetails.css";
 
 export default function CourseDetails(props) {
-
   if(props) {
     return (
       <div className="CourseDetails">

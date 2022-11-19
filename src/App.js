@@ -13,10 +13,12 @@ export default function App() {
   const apiUrl = "https://private-e05942-courses22.apiary-mock.com/courses";
 
   useEffect(() => {
+    // API call on page load to display the offers to the user
     axios.get(apiUrl).then(handleResponse);
   }, []);
 
-  function handleResponse(response) {
+  const handleResponse = (response) => {
+    // save API response inside the data state
     setData(response.data);
     setLoaded(true);
   }
@@ -25,11 +27,9 @@ export default function App() {
     return (
       <div className="App">
         <Nav navbar-nav={true} />
-        <div>
-          <Intro />
-          <Course data={data} />
-          <CourseSelection />
-        </div>
+        <Intro />
+        <Course data={data} />
+        <CourseSelection />
         <Footer />
       </div>
     );
