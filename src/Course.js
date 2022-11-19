@@ -5,7 +5,7 @@ export default function Course(props) {
   return (
     <div className="Course">
       <h3 className="mb-3">Next start dates:</h3>
-      <div className="course-wrapper d-flex justify-content-around">
+      <div className="container course-wrapper d-flex justify-content-around">
       {props.data.map((course, index) => {
         return (
           <div key={index} className="rounded">

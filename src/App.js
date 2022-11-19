@@ -27,9 +27,11 @@ export default function App() {
     return (
       <div className="App">
         <Nav navbar-nav={true} />
-        <Intro />
-        <Course data={data} />
-        <CourseSelection />
+        <div className="main-wrapper">
+          <Intro />
+          <Course data={data} />
+          <CourseSelection />
+        </div>
         <Footer />
       </div>
     );
